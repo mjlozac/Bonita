@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌼 Te Amo 🌼</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* Fuente cursiva */
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #87CEEB, #ffffff); /* cielo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #ff8c00;
+    margin-top: 20px;
+  }
+
+  .ramo {
+    position: relative;
+    margin-top: 50px;
+    width: 200px;
+    height: 300px;
+  }
+
+  .tulipan {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 100px;
+    animation: mover 3s ease-in-out infinite alternate;
+  }
+
+  .tulipan:nth-child(2) { left: 30px; animation-delay: 0.2s; }
+  .tulipan:nth-child(3) { left: 60px; animation-delay: 0.4s; }
+  .tulipan:nth-child(4) { left: 90px; animation-delay: 0.6s; }
+  .tulipan:nth-child(5) { left: 120px; animation-delay: 0.8s; }
+
+  /* Tallo */
+  .tallo {
+    width: 6px;
+    height: 60px;
+    background: green;
+    margin: 0 auto;
+    border-radius: 3px;
+  }
+
+  /* Flor */
+  .flor {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 50% 30%, #ffeb3b, #ffd700, #ff8c00);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin-top: -10px;
+  }
+
+  /* Animación de balanceo */
+  @keyframes mover {
+    0% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(10px) rotate(5deg); }
+    100% { transform: translateX(-10px) rotate(-5deg); }
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Te amo</h1>
+
+<div class="ramo">
+  <div class="tulipan">
+    <div class="tallo"></div>
+    <div class="flor"></div>
+  </div>
+  <div class="tulipan">
+    <div class="tallo"></div>
+    <div class="flor"></div>
+  </div>
+  <div class="tulipan">
+    <div class="tallo"></div>
+    <div class="flor"></div>
+  </div>
+  <div class="tulipan">
+    <div class="tallo"></div>
+    <div class="flor"></div>
+  </div>
+  <div class="tulipan">
+    <div class="tallo"></div>
+    <div class="flor"></div>
+  </div>
+</div>
+
+</body>
+</html>
