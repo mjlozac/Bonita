@@ -1,104 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flores Amarillas para Ti 💛</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: linear-gradient(to bottom, #fffbea, #ffefd5);
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      color: #333;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-top: 50px;
-      color: #d4a017;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    }
-    p {
-      font-size: 1.3rem;
-      margin: 20px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 24px;
-      background: #ffd700;
-      color: #333;
-      font-weight: bold;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: transform 0.3s, background 0.3s;
-      font-size: 1.1rem;
-    }
-    .btn:hover {
-      background: #ffcc00;
-      transform: scale(1.1);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌼 Feliz Día de las Flores Amarillas 💛</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fffbea, #ffefd5);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    color: #333;
+  }
 
-    /* Animación de flores cayendo */
-    .flower {
-      position: absolute;
-      top: -100px;
-      width: 60px;
-      animation: fall linear forwards;
-    }
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-      }
-    }
-  </style>
-</head>
-<body>
-  <h1>🌼 Flores Amarillas para Ti 🌼</h1>
-  <p>Porque iluminas mis días como el sol en estas flores amarillas 💛</p>
+  /* Menú principal */
+  .menu {
+    margin-top: 50px;
+  }
 
-  <!-- Video de YouTube oculto que suena automáticamente -->
-  <iframe width="0" height="0" 
-    src="https://www.youtube.com/embed/7HDeem-JaSY?autoplay=1&loop=1&playlist=7HDeem-JaSY"
-    frameborder="0" allow="autoplay">
-  </iframe>
-
-  <script>
-    // Lista de imágenes de flores amarillas
-    const flowerImages = [
-      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rudbeckia_hirta_%28Black-eyed_Susan%29.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Sunflower_sky_backdrop.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/8b/Yellow_tulip_flower.jpg"
-    ];
-
-    // Generar flores cayendo
-    function createFlower() {
-      const flower = document.createElement("img");
-      flower.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
-      flower.classList.add("flower");
-
-      flower.style.left = Math.random() * window.innerWidth + "px";
-      flower.style.animationDuration = (Math.random() * 5 + 5) + "s";
-
-      document.body.appendChild(flower);
-
-      // Eliminar flor cuando termina la animación
-      flower.addEventListener("animationend", () => {
-        flower.remove();
-      });
-    }
-
-    // Crear flores cada 600ms
-    setInterval(createFlower, 600);
-
-    // Mensaje sorpresa
-    window.onload = () => {
-      setTimeout(() => {
-        alert("💛 Sorpresa amor, estas flores amarillas son solo para ti 🌼");
-      }, 1000);
-    };
-  </script>
-</body>
-</html>
+  .menu h1, .menu
