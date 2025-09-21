@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌼 Feliz Día de las Flores Amarillas 💛</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fffbea, #ffefd5);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    color: #333;
+  }
+
+  /* Menú principal */
+  .menu {
+    margin-top: 50px;
+  }
+
+  .menu h1, .menu h2, .menu h3 {
+    margin: 10px 0;
+    color: #d4a017;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  }
+
+  .menu h1 { font-size: 3rem; }
+  .menu h2 { font-size: 2.5rem; }
+  .menu h3 { font-size: 2rem; }
+
+  /* Botón */
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #ffd700;
+    color: #333;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .btn:hover {
+    background: #ffcc00;
+    transform: scale(1.1);
+  }
+
+  /* Tulipanes cayendo */
+  .tulip {
+    position: absolute;
+    top: -100px;
+    width: 60px;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <h1>🌼 Feliz Día de las Flores Amarillas 🌼</h1>
+  <h2>💛 Te Amo 💛</h2>
+  <h3>Tengo un regalo para ti</h3>
+  <button class="btn" id="showGift">Ver Regalo</button>
+</div>
+
+<script>
+  const tulips = [
+    "https://upload.wikimedia.org/wikipedia/commons/8/8b/Yellow_tulip_flower.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/d/d2/Yellow_tulip_2.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tulipa_sylvestris_03.jpg"
+  ];
+
+  let giftInterval;
+
+  document.getElementById("showGift").addEventListener("click", () => {
+    // Evita que se creen varios intervalos
+    if(giftInterval) return;
+
+    giftInterval = setInterval(() => {
+      const tulip = document.createElement("img");
+      tulip.src = tulips[Math.floor(Math.random() * tulips.length)];
+      tulip.classList.add("tulip");
+      tulip.style.left = Math.random() * window.innerWidth + "px";
+      tulip.style.animationDuration = (Math.random() * 4 + 4) + "s";
+      document.body.appendChild(tulip);
+
+      // Eliminar tulipanes después de caer
+      tulip.addEventListener("animationend", () => tulip.remove());
+    }, 500); // Cada 0.5s aparece un tulipán
+  });
+
+  // Mensaje sorpresa
+  window.onload = () => {
+    setTimeout(() => {
+      alert("💛 Sorpresa amor... este ramo de tulipanes amarillos es para ti 🌼");
+    }, 1200);
+  };
+</script>
+
+</body>
+</html>
